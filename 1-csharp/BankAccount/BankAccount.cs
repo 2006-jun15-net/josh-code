@@ -9,7 +9,9 @@ namespace BankAccount
 {
     public class BankAccount
     {
-        public string number { get; }
+        //These are properties in C#. They are different from variables. They are fields. 
+        //Properties are used for the view that is shown to the outside world
+        public string Number { get; }
         public string Owner { get; set; }
         public decimal Balance
         {
@@ -28,7 +30,7 @@ namespace BankAccount
         public BankAccount(string name, decimal initialBalance)
         {
             this.Owner = name;
-            this.number = accountNumberSeed.ToString();
+            this.Number = accountNumberSeed.ToString();
             accountNumberSeed++;
             MakeDeposit(initialBalance, DateTime.Now, "Initial balance");
         }
@@ -64,7 +66,7 @@ namespace BankAccount
         static void Main(string[] args)
         {
             var account = new BankAccount("<name>", 1000);
-            Console.WriteLine($"Account {account.number} was created for {account.Owner} with ${account.Balance} initial balance.");
+            Console.WriteLine($"Account {account.Number} was created for {account.Owner} with ${account.Balance} initial balance.");
 
             account.MakeWithdrawal(500, DateTime.Now, "Rent payment");
             Console.WriteLine(account.Balance);
@@ -79,7 +81,7 @@ namespace BankAccount
             catch (ArgumentOutOfRangeException e)
             {
                 Console.WriteLine("Exception caught creating account with negative balance ");
-                Console.WriteLine(e.ToString());
+                // Console.WriteLine(e.ToString());
             }
 
             try
@@ -89,7 +91,7 @@ namespace BankAccount
             catch (InvalidOperationException e)
             {
                 Console.WriteLine("Exceptions caught trying to overdraw");
-                Console.WriteLine(e.ToString());
+                // Console.WriteLine(e.ToString());
             }
         }
     }
