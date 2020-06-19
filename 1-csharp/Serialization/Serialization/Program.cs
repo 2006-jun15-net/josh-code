@@ -44,7 +44,7 @@ namespace Serialization
         /// <returns>serialized JSON</returns>
         private async static Task WriteStringToFileAsync(string filePath, string json)
         {
-            //await File.WriteAllTextAsync(filePath, json);
+            await File.WriteAllTextAsync(filePath, json);
             //for more control over the file I/O, we would usually open a FileStream object
 
             //the CLR manages the memory for all the CLR objects with garbage collection
@@ -55,7 +55,7 @@ namespace Serialization
             //the IDisposable interface is implemented by any class which you need to do this for.
 
             //FileStream fileStream = null;
-
+            /*
             try
             {
                 //fileStream = new FileStream(filePath, FileMode.Create);
@@ -64,12 +64,11 @@ namespace Serialization
 
                 using var fileStream = new FileStream(filePath, FileMode.Create);
 
-                //fileStream. //pretend the code has been finished. 
-            }
+                            }
             catch (IOException ex)
             {
                 Console.WriteLine($"Error writing file: {ex.Message}");
-            }
+            }*/
             /*finally
             {
                 //if (fileStream != null)
@@ -85,7 +84,7 @@ namespace Serialization
             //using (var fileStream = new FileStream(filePath, FileMode.Create))
             //{
             //} // right here, at the closing brace, it effectively finally
-            
+
         }
         // if you do not await the task, there is no way of knowing if the task completed or not
         //When doing something async:
