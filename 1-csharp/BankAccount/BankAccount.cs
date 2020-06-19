@@ -81,7 +81,7 @@ namespace BankAccount
             catch (ArgumentOutOfRangeException e)
             {
                 Console.WriteLine("Exception caught creating account with negative balance ");
-                // Console.WriteLine(e.ToString());
+                 Console.WriteLine(e.ToString());
             }
 
             try
@@ -91,7 +91,7 @@ namespace BankAccount
             catch (InvalidOperationException e)
             {
                 Console.WriteLine("Exceptions caught trying to overdraw");
-                // Console.WriteLine(e.ToString());
+                Console.WriteLine(e.ToString());
             }
         }
     }
