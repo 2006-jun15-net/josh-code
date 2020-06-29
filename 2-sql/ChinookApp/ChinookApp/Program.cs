@@ -86,7 +86,26 @@ namespace ChinookApp
             //This will throw an error currently due to the Id not auto-incrementing in the DB itself unless Id is changed to something not currently in the Db. 
             Exemployee emp1 = new Exemployee {Id = 3, FirstName = "Amanda", LastName = "Ripley", Ssn = "1234447809", DeptId = 2 };
 
-            var newEmployee = context.Add(emp1);//multiple entries can be added to the db by using the AddRange() method and supplying a Collection
+            context.Add(emp1);//multiple entries can be added to the db by using the AddRange() method and supplying a Collection
+            //context.Exemployee.Add(emp1); //This also works, and enforces the type of data being added
+
+            //context.Update(emp1);//Update existing rows
+            //context.Exemployee.Update(emp1);
+
+            //create if doesn't exist
+            //when we look up an object by primary key specifically, we can use DbSet.Find
+            //  it wont fetch from the database again, if the object is already cached in the context. There's no way to combine with .Include()
+            var dept = context.Exdepartment
+                .FirstOrDefault(c => c.Id == 10);
+            if (dept == null)
+            {
+                dept = new Exdepartment
+                {
+                    Id = 10,
+                    Location = "Research Lab"
+                };
+            }
+
             context.SaveChanges();
             Console.WriteLine("New Employee has been added...");
         }
