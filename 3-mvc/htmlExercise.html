@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Exercise</title>
+    <style>
+        html {
+            padding-left: 5%;
+            margin-bottom: 10px;
+            width: 50%;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid;
+        }
+
+        #image {
+            /* text-align: center; */
+            border-style: solid;
+            width: 50%;
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="https://image.shutterstock.com/image-photo/cat-on-fence-260nw-420287446.jpg" alt="an image">
+    <h1>About</h1>
+    <p>Some text about the website.</p>
+    <br>
+    <br>
+    <h2>Our Locations</h2>
+    <ul>
+        <li>USA</li>
+        <ul>
+            <li><a href="#">New York</a></li>
+            <li><a href="#">Columbus</a></li>
+            <li><a href="#">Austin</a></li>
+            <li><a href="#">Philly</a></li>
+        </ul>
+        <li>World</li>
+        <ul>
+            <li><a href="#">Ottawa</a></li>
+            <li><a href="" #>Sydney</a></li>
+        </ul>
+    </ul>
+    <h2>Upcoming Classes</h2>
+    <table>
+        <thead>
+            <th>Location</th>
+            <th>Topic</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>New York</td>
+                <td>Javascript & jQuery</td>
+            </tr>
+            <tr>
+                <td>San Fancisco</td>
+                <td>HTML & CSS</td>
+            </tr>
+        </tbody>
+    </table>
+    <h2>Sign Up!</h2>
+    <form>
+        <div>
+            Name:
+            <input type="text" name="firstname">
+        </div>
+        <div>
+            Email:
+            <input type="text" name="email">
+        </div>
+        <div>
+            Location:
+            <select id="location" name="location">
+                <option value="San Francisco">San Francisco</option>
+                <option value="New York">New York</option>
+                <option value="Mars">Mars</option>
+            </select>
+        </div>
+        <div>
+            <fieldset>
+                <legend>Gender:</legend>
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label>
+            </fieldset>
+        </div>
+        <div>
+            Experience:
+            <br>
+            <textarea name="experience"></textarea>
+        </div>
+        <button type="submit">Sign Up</button>
+    </form>
+    <br>
+    <div><a href="#">Twitter</a>|<a href="#">Facebook</a>|<a href="#">Flickr</a></div>
+</body>
+
+</html>
