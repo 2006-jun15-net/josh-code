@@ -35,5 +35,21 @@ namespace KitchenServiceRest.Controllers
             })
             .ToArray();
         }
+        [HttpPost]
+        public void Post(WeatherForecast forecast)
+        {
+
+        }
+
+        [HttpPut]
+        public void Put(WeatherForecast forecast)
+        {
+
+        }
+        [HttpDelete]
+        public void Delete()
+        {
+
+        }
     }
 }
